@@ -3,15 +3,25 @@
     "type": "module",
     "scripts": {
         "build": "vite build",
-        "dev": "vite"
+        "dev": "vite",
+        "tailwind": "bunx tailwindcss -i ./resources/css/tailwind.css -o ./public/css/tailwind.css --watch --minify",
+        "turbo": "bunx esbuild ./resources/js/turbo.js --outfile=public/js/turbo.js --bundle --minify",
+        "chart": "bunx esbuild ./resources/js/chart.js --outfile=public/js/chart.js --bundle --minify",
+        "font-awesome": "bunx esbuild ./resources/css/font-awesome.css --outfile=public/css/font-awesome.css --bundle --minify --loader:.woff=file --loader:.woff2=file --loader:.ttf=file"
     },
     "devDependencies": {
         "autoprefixer": "^10.4.20",
         "axios": "^1.7.4",
         "concurrently": "^9.0.1",
+        "daisyui": "^4.12.13",
         "laravel-vite-plugin": "^1.0",
         "postcss": "^8.4.47",
-        "tailwindcss": "^3.4.13",
+        "tailwindcss": "^3.4.14",
         "vite": "^5.0"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "^6.6.0",
+        "@hotwired/turbo": "^8.0.12",
+        "chart.js": "^4.4.5"
     }
 }
